@@ -1,0 +1,28 @@
+﻿<Window x:Class="WPF_Music_Player.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Music_Player" xmlns:widgets="clr-namespace:WPF_Music_Player.Widgets"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="10px"></RowDefinition>
+            <RowDefinition Height="50px"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid x:Name="mainViewStack" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100px"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                <StackPanel x:Name="libraryList"></StackPanel>
+            </ScrollViewer>
+            <widgets:MusicList Grid.Column="1" HorizontalAlignment="Stretch" x:Name="musicList"></widgets:MusicList>
+        </Grid>
+        <widgets:MusicProgressBar Row="1" Height="10px" HorizontalAlignment="Stretch"></widgets:MusicProgressBar>
+        <widgets:MusicControls  Row="2" VerticalAlignment="Stretch"></widgets:MusicControls>
+    </Grid>
+</Window>
